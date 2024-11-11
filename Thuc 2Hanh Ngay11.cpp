@@ -5,7 +5,7 @@ int a[100][100];
 int n;
  void file()
  {
- 	FILE *f
+ 	FILE *f;
  	f = fopen("Ma tran.txt", "rt");
  	if(f==NULL)
  	 printf("Khong co tap tin");
@@ -22,15 +22,15 @@ int n;
   	for(int i=1;i<n;i++)
   	for(int j=1;j<n;j++)
   	printf("%d",a[i][j]);
-  	printf("\n");		
+  	printf("\t\n");		
   }
-  int ktdx(int x[100][100],int y,int z)
+  int ktdx()
 {
-   for(int i=1;i<=y;i++)
+   for(int i=1;i<=n;i++)
     {
-      for(int j=1;j<=z;j++)
+      for(int j=1;j<=n;j++)
       {
-    if(x[i][j]!=x[j][i])
+    if(a[i][j]!=a[j][i])
       {
     return 0;
       }
@@ -43,9 +43,11 @@ return 1;
  {
  	file();
  	xuatfile();
- 	if(doixung()==1){
+ 	if(ktdx()==1){
  		printf("Do thi Vo Huong");
+		 }
  		else
+ 		{
  		printf("Do thi Co Huong");
  	}
 }
