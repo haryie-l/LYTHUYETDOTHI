@@ -40,17 +40,31 @@ int n;
 }
 return 1;
 }
-
+ int bacvao(int x){
+ 	int tong = 0;
+ 	for (int i =1; i<=n; i++)
+ 	tong = tong + a[i][x];
+ 	return tong;
+ }
+ int bacra(int x){
+ 	int tong = 0;
+ 	for(int j = 1; j<=n; j++)
+ 	 tong= tong + a[x][j];
+ 	 return tong;
+ }
  int main ()
  {
+ 	int x;
  	file();
  	xuatfile();
+ 	printf("Nhap dinh cua do thi can tim bac: ",x);
+ 	scanf("%d",&x);
  	if(ktdx()==1){
- 		printf("Do thi Vo Huong");
+     printf("Bac dinh %d la: %d ",x,bacra(x));
 		 }
  		else
  		{
- 		printf("Do thi Co Huong");
+ 	printf("Bac ra dinh %d la: %d ",x,bacra(x));
+ 	printf("Bac vao dinh %d la: %d ",x,bacvao(x));
  	}
 }
- 	
